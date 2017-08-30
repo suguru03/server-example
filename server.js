@@ -7,6 +7,7 @@ const Context = require('context2');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
+const lib = require('./lib');
 const config = require('./config');
 
 log4js.configure(_.pick(config.logging, 'appenders', 'categories'));
@@ -29,7 +30,7 @@ app.use((req, res, next) => {
   next();
 });
 
-const context = new Context({ config });
+const context = new Context({ lib, config });
 
 app.set('context', context);
 
