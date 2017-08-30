@@ -1,0 +1,21 @@
+{
+  "server": {
+    "host": "http://localhost"
+  },
+  "logging": {
+    "categories": {
+      "default": {
+        "appenders": ["console"],
+        "level": "debug"
+      },
+      "system": {
+        "appenders": ["console"],
+        "level": "debug"
+      },
+      "api": {
+        "appenders": ["console"],
+        "level": "debug"
+      }
+    }
+  }
+}

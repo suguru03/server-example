@@ -1,0 +1,35 @@
+{
+  "server": {
+    "host": "",
+    "port": 3000
+  },
+  "mysql": {
+    "host": "127.0.0.1",
+    "user": "root",
+    "username": "root",
+    "password": "mysql",
+    "database": "local",
+    "dateStrings": true
+  },
+  "logging": {
+    "appenders": {
+      "console": {
+        "type": "console"
+      }
+    },
+    "categories": {
+      "default": {
+        "appenders": ["console"],
+        "level": "info"
+      },
+      "system": {
+        "appenders": ["console"],
+        "level": "info"
+      },
+      "api": {
+        "appenders": ["console"],
+        "level": "info"
+      }
+    }
+  }
+}
