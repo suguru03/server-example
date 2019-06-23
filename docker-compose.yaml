@@ -1,0 +1,31 @@
+version: "3.7"
+
+services:
+  server:
+    image: node:12.4.0-alpine
+    env_file:
+      - ./.env
+    environment:
+      - MYSQL_HOST=mysql
+    volumes:
+      - ./:/var/app
+    working_dir: /var/app/packages/server
+    networks:
+      - overlay
+  mysql:
+    image: mysql:5.7.26
+    ports:
+      - 3306:3306
+    env_file:
+      - ./.env
+    volumes:
+      - mysql-volume:/var/lib/mysql
+    networks:
+      - overlay
+
+volumes:
+  grafana-volume:
+  mysql-volume:
+
+networks:
+  overlay:
