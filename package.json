@@ -1,0 +1,31 @@
+{
+  "name": "server-example",
+  "version": "0.0.0",
+  "repository": "git@github.com:suguru03/server-example.git",
+  "author": "Suguru Motegi <suguru.motegi@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": ["packages/*"],
+  "devDependencies": {
+    "husky": "^2.4.1",
+    "lerna": "^3.15.0",
+    "lint-staged": "^8.2.1",
+    "prettier": "^1.18.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "printWidth": 120,
+    "singleQuote": true,
+    "trailingComma": "all"
+  }
+}
